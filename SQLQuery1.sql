@@ -1,20 +1,28 @@
-CREATE DATABASE senai;
+CREATE DATABASE senai
 USE senai
 
-CREATE TABLE docentes(
-id INT PRIMARY KEY,
-nome TEXT NOT NULL,
-salario DECIMAL(10,2)
-);
-INSERT INTO docentes (nome, salario) VALUES ('CarloS', 4500.00);
-INSERT INTO docentes (nome, salario) VALUES ('Mariana', 5200.50);
-INSERT INTO docentes (nome, salario) VALUES ('João', 4800.75);
-
-CREATE TABLE cursos(
-id INT PRIMARY KEY,
-nome TEXT NOT NULL,
-carga_horaria INT,
-id_docente INT
+CREATE TABLE Docentes(
+id INT PRIMARY KEY IDENTITY(1,1),
+nome VARCHAR (225),
+salario VARCHAR (50)
 );
 
+SELECT *FROM Docentes;
 
+INSERT INTO  Docentes (nome, salario)
+VALUES ('Kauãn silva', '2.558')
+
+CREATE TABLE Cursos(
+id INT PRIMARY KEY IDENTITY(1,1),
+nome VARCHAR (225),
+carga_horaria VARCHAR (100),
+docentes VARCHAR (225)
+);
+
+SELECT *FROM Cursos;
+
+INSERT INTO Cursos(nome, carga_horaria, docentes)
+VALUES ('full-stack','100','Kauãn silva'),
+('energisa','100','cauan guimaraes'),
+('panificação','100','adriana'),
+('telecomunicação','100','marcio')
